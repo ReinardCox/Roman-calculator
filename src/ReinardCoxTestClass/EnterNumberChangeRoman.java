@@ -105,4 +105,71 @@ public class EnterNumberChangeRoman {
 
         }
     }
+
+    public static int parse(String number) { // string goes in, number comes out
+        Scanner keyboard = new Scanner(System.in);
+        // TODO: Group 2: Write this function!
+        int answer = 0;
+
+        for (int j = 0; j < (number.length()); j ++) {
+            if (number.charAt(j) != 'M' && number.charAt(j) != 'C'&& number.charAt(j) != 'D' && number.charAt(j) != 'X' && number.charAt(j) != 'L' && number.charAt(j) != 'V' && number.charAt(j) != 'I') {
+                return -1;
+            }
+        }
+
+        for (int i = 0; i < number.length(); i ++) {
+            if (number.charAt(i) == 'M') {
+                answer += 1000;
+            } else if (i != (number.length() - 1) && (number.charAt(i) == 'C' && number.charAt(i + 1) == 'M')) {
+                answer += 900;
+                i++;
+            } else if (number.charAt(i) == 'D') {
+                answer += 500;
+            } else if (i != (number.length() - 1) && (number.charAt(i) == 'C' && number.charAt(i + 1) == 'D')) {
+                answer += 400;
+                i++;
+            } else if (number.charAt(i) == 'C') {
+                answer += 100;
+            } else if (i != (number.length() - 1) && (number.charAt(i) == 'X' && number.charAt(i + 1) == 'C')) {
+                answer += 90;
+                i++;
+            } else if (number.charAt(i) == 'L') {
+                answer += 50;
+            } else if (i != (number.length() - 1) && (number.charAt(i) == 'X' && number.charAt(i + 1) == 'L')) {
+                answer += 40;
+                i++;
+            } else if (number.charAt(i) == 'X') {
+                answer += 10;
+            } else if (i != (number.length() - 1) && (number.charAt(i) == 'I' && number.charAt(i + 1) == 'X')) {
+                answer += 9;
+                i++;
+            } else if (number.charAt(i) == 'V') {
+                answer += 5;
+            } else if (i != (number.length() - 1) && (number.charAt(i) == 'I' && number.charAt(i + 1) == 'V')) {
+                answer += 4;
+                i++;
+            } else if (number.charAt(i) == 'I') {
+                answer += 1;
+            } else {
+                answer += 0;
+            }
+            continue;
+        }
+
+
+
+        //System.out.println(answer);
+        //System.out.println("The input is " + number);
+
+
+        return answer;//stop that the part of the program from running
+
+    }
+    
+    
+    
+    
 }
+
+
+
