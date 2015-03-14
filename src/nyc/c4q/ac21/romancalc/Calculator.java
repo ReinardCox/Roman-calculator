@@ -31,7 +31,18 @@ public class Calculator {
      */
     public static void calculate(String leftNumber, String operation, String rightNumber) {
         // TODO: Group 3: Write this function!
+
+
+
+        
+
+
+
+
     }
+
+
+
 
     /**
      * Parses a decimal number.
