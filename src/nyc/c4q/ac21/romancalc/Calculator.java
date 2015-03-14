@@ -32,17 +32,21 @@ public class Calculator {
     public static void calculate(String leftNumber, String operation, String rightNumber) {
         // TODO: Group 3: Write this function!
 
+        int LN = RomanNumerals.parse(leftNumber), RN = RomanNumerals.parse(rightNumber), Ans = 0;
 
-
-        
-
-
-
-
+        if (operation.equals("+")) {
+            Ans = (LN + RN);
+        } else if (operation.equals("-")) {
+            Ans = (LN - RN);
+        } else if (operation.equals("*")) {
+            Ans = (LN * RN);
+        } else if (operation.equals("/")) {
+            Ans = (LN / RN);
+        } else if (operation.equals("#")) {
+            Ans = (LN + RN) / 2;
+        }
+        System.out.println(RomanNumerals.format(Ans));
     }
-
-
-
 
     /**
      * Parses a decimal number.
